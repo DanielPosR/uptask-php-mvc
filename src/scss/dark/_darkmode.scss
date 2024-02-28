@@ -1,0 +1,106 @@
+@use 'base/mixins' as m;
+@use 'base/variables' as v;
+
+
+@media (prefers-color-scheme: dark) {
+    $grisOscuro: #353030;
+
+    body {
+        background-color: $grisOscuro;
+    }
+
+    .tagline,
+    .formulario label,
+    .login .acciones a,
+    .crear .acciones a,
+    .olvide .acciones a,
+    .tarea p,
+    .modal .formulario legend,
+    .listado-proyectos .proyecto,
+    .listado-tareas .no-tareas,
+    .no-proyectos {
+        color: v.$blanco;
+    }
+
+
+    .no-proyectos a {
+        color: v.$naranja;
+    }
+
+    .descripcion-pagina,
+    .nombre-pagina {
+        color: v.$grisClaro;
+    }
+
+    .alerta.error {
+        background-color: lighten(v.$rojo, 5%);
+        color: v.$blanco;
+    }
+
+
+    .formulario .campo input::placeholder {
+        color: v.$negro;
+    }
+
+    .sidebar {
+
+        @include m.tablet {
+            background-color: darken(v.$azul, 25%);
+        }
+
+        .sidebar-nav a {
+
+            &.activo,
+            &:hover {
+                background-color: darken(v.$naranja, 15%);
+            }
+        }
+    }
+
+
+    .barra-mobile,
+    .barra {
+        background-color: darken(v.$grisOscuro, 20%);
+    }
+
+
+    .barra {
+        .cerrar-sesion {
+            background-color: darken(v.$azul, 10%);
+        }
+
+        p {
+            color: v.$naranja;
+
+            span {
+                color: v.$blanco;
+            }
+        }
+    }
+
+    .dashboard {
+        background-color: v.$grisOscuro;
+
+        .enlace {
+            color: v.$blanco;
+
+            &:hover {
+                color: lighten(v.$indigo, 30%);
+            }
+        }
+    }
+
+
+    .listado-proyectos .proyecto {
+        background-color: darken(v.$cyan, 5%);
+
+        &:hover {
+            background-color: darken(v.$rosa, 10%);
+        }
+    }
+
+
+    .formulario.nueva-tarea {
+        background-color: #363636;
+    }
+}
